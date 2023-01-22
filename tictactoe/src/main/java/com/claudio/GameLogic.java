@@ -6,10 +6,18 @@ public class GameLogic {
         this.plateau = new Plateau();
     }
 
+    // return true if move is allowed
     public boolean isMoveLegal(int[] move){
-        return false;
+        if(plateau.board[move[0]][move[1]] != 0){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
+
+    // TODO
     public boolean isGameFinished(){
-        return false;
+        return true;
     }
 }
