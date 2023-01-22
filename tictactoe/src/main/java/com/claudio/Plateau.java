@@ -1,9 +1,9 @@
 package com.claudio;
 
 public class Plateau {
-    int[][] board;
+    static int[][] board;
     Plateau(){
-        this.board = new int[][]{{0,0,0},
+        Plateau.board = new int[][]{{0,0,0},
                                 {0,0,0},
                                 {0,0,0}};
     }
@@ -16,7 +16,7 @@ public class Plateau {
                     System.out.print(" X ");
                 }
                 else if(board[i][j] == 2){
-                    System.out.print(" 0 ");
+                    System.out.print(" O ");
                 }
                 else{
                     System.out.print(" _ ");
@@ -28,7 +28,7 @@ public class Plateau {
     }
     // func update the board
     public void update(int[] move, int joueur){
-        board[move[0]][move[1]] = joueur;
+        board[move[0]-1][move[1]-1] = joueur;
     }
 
 }

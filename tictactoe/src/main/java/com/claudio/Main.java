@@ -25,6 +25,8 @@ public class Main {
             }while(!gameLogic.isMoveLegal(move));
             plateau.update(move, player);
             plateau.afficherPlateau();
+            tour += 1;
         }
+        in.close();
     }
 }
