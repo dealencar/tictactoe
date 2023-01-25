@@ -12,8 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>19</maven.compiler.source>
+    <maven.compiler.target>19</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -21,7 +21,7 @@
     <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-swing</artifactId>
-        <version>20-ea+11</version>
+        <version>19-ea+11</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -38,6 +38,14 @@
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>0.0.1</version>
+          <configuration>
+            <mainClass>org.claudio.Window</mainClass>
+          </configuration>
         </plugin>
         <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>

@@ -1,6 +1,7 @@
 package com.claudio;
 
 public class Plateau {
+    public static Plateau plateau;
     static int[][] board;
     Plateau(){
         Plateau.board = new int[][]{{0,0,0},

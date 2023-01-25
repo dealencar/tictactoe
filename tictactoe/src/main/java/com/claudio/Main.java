@@ -1,6 +1,6 @@
 package com.claudio;
+import java.io.IOException;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String args[]){
         Scanner in = new Scanner(System.in);
@@ -8,10 +8,11 @@ public class Main {
         Plateau plateau = new Plateau();
         GameLogic gameLogic = new GameLogic();
         int tour = 0;
-        int player;
+        int player = 0;
         int[] move = new int[2];
+        boolean isGameFinished = false;
 
-        while(gameLogic.isGameFinished()){
+        while(!isGameFinished){
             if(tour % 2 == 0){ 
                 player = 1;
             }
@@ -26,7 +27,15 @@ public class Main {
             plateau.update(move, player);
             plateau.afficherPlateau();
             tour += 1;
+            isGameFinished = gameLogic.isGameFinished(move, player);
+        }
+        try {
+        	System.in.available();
+        } catch (IOException e) {
+        	// TODO Auto-generated catch block
+        	e.printStackTrace();
         }
         in.close();
+        System.out.println("Player "+ player + " wins!");
     }
 }
